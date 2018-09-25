@@ -9,7 +9,7 @@ public class LibraryTest {
 
     @Before
     public void before(){
-        library = new Library();
+        library = new Library(5);
         book = new Book("A Little Life", "Hanya Yanagihara", "Literary Fiction");
     }
 
@@ -22,5 +22,10 @@ public class LibraryTest {
     public void canAddBookToLibrary() {
         library.addBook(book);
         assertEquals(1, library.countNumberOfBooks());
+    }
+
+    @Test
+    public void canGetCapacity() {
+        assertEquals(5, library.getCapacity());
     }
 }
