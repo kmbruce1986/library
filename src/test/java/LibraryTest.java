@@ -28,4 +28,16 @@ public class LibraryTest {
     public void canGetCapacity() {
         assertEquals(5, library.getCapacity());
     }
+
+    @Test
+    public void cannotAddBookToLibraryNoCapacity() {
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(5, library.countNumberOfBooks());
+        library.addBook(book);
+        assertEquals(5, library.countNumberOfBooks());
+    }
 }
