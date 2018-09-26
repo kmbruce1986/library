@@ -12,6 +12,11 @@ public class LibraryTest {
         library = new Library(5);
         book = new Book("A Little Life", "Hanya Yanagihara", "Literary Fiction");
     }
+//  the same test as below, but this may be better named.
+//    @Test
+//    public void libraryStartsEmpty() {
+//        assertEquals(0, library.countNumberOfBooks());
+//    }
 
     @Test
     public void canCountNumberOfBooks() {
@@ -27,6 +32,17 @@ public class LibraryTest {
     @Test
     public void canGetCapacity() {
         assertEquals(5, library.getCapacity());
+    }
+
+//    add a test to show whether or not library is full
+    @Test
+    public void isFull() {
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(true, library.isFull());
     }
 
     @Test
